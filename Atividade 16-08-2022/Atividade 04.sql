@@ -1,4 +1,4 @@
-CREATE TABLE sprint1;
+CREATE TABLE sprint01;
 
 USE sprint1;
 
@@ -6,8 +6,8 @@ USE sprint1;
 CREATE TABLE Professor(
 		idProfessor			int 			primary key,
         nome 				varchar(40),
-        especialista				varchar(40),
-		dtNasc 			date 
+        especialista		varchar(40),
+		dtNasc 				date 
        
 		
 );
@@ -24,13 +24,14 @@ INSERT INTO Professor VALUES
         
 SELECT * FROM Professor;
 
-ALTER TABLE Professor ADD constraint chkFuncao CHECK (funcao in ('assistente','titular','monitor'));
 ALTER TABLE Professor ADD COLUMN funcao varchar(50);
+ALTER TABLE Professor ADD constraint chkFuncao CHECK (funcao in ('assistente','titular','monitor'));
+
 
 UPDATE Professor SET nome = 'VITAO'
 			WHERE idProfessor>=0;
 
-UPDATE Professor SET funcao = 'assistente'
+UPDATE Professor SET funcao = 'titular'
 			WHERE idProfessor>=0;
             
 INSERT INTO Professor VALUES 
@@ -40,29 +41,11 @@ DELETE FROM Professor WHERE idProfessor = '5';
 
 SELECT * FROM Professor WHERE funcao = 'titular';
 
-SELECT funcao, dtNacs FROM Professor;
-            
-            
-            
-            
+SELECT funcao, dtNasc  FROM Professor WHERE funcao = 'monitor';
 
-ALTER TABLE Professor MODIFY protagonista varchar(150);
+UPDATE Professor SET dtNasc = '2002-09-10'
+			WHERE idProfessor =3;
 
-UPDATE Professor SET diretor = 'omi'
-			WHERE idProfessor= '5';
-            
-UPDATE Professor SET diretor = 'omi 2'
-		WHERE idProfessor= '2' or idProfessor= '7';
-            
-UPDATE Professor SET titulo = 'Cachorrinhas'
-		WHERE idProfessor= '6';
-        
-DELETE FROM Professor WHERE idProfessor='6';
-        
-SELECT * FROM Professor WHERE genero <> 'Drama';
+TRUNCATE TABLE Professor;
 
-
-
-DESC Filme;
-
-TRUNCATE TABLE Filme;
+    

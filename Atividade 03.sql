@@ -1,6 +1,6 @@
 CREATE DATABASE sprint01;
 USE sprint01;
-
+DROP TABLE Filme;
 
 CREATE TABLE Filme (
 	idFilme			int 			primary key,

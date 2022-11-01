@@ -1,6 +1,7 @@
 CREATE DATABASE sprint01;
 USE sprint01;
 
+
 CREATE TABLE Musica (
 	idMusica 		int 			primary key,
 	artista 		varchar(40),
