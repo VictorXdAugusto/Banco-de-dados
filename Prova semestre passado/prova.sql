@@ -144,4 +144,4 @@ select preco from produto
     
 select sum(distinct preco) FROM produto;
 
-select sum(p.preco) 'Soma dos valores' from produto as p join vendaproduto as vp on idProduto = fkProduto join venda as v on idVenda = fkVenda group by v.idVenda;  
+select sum(p.preco) 'Soma dos valores' from produto as p join vendaproduto as vp on idProduto = fkProduto join venda as v on idVenda = fkVenda group by v.idVenda;
